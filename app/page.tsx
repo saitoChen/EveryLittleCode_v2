@@ -1,9 +1,9 @@
-/*
- * @Author: chenjianfeng chenjianfeng9335@gmail.com
- * @Date: 2023-12-16 11:11:23
- * @Description:
- */
-
 export default function Home() {
-  return <main>落霞与孤鹜齐飞</main>;
+  return (
+    <>
+      <div className="me-title flex justify-center sm:mt-4">
+        EveryLittleCode🖥️
+      </div>
+    </>
+  );
 }
