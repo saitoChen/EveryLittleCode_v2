@@ -16,6 +16,15 @@ const config: Config = {
       backgroundColor: {
         primary: "#d3eaf8",
       },
+      textColor: {
+        highlight: "#4433ff",
+        base: "#2A2A2A",
+        title: "#E60067",
+        "notes-title": "#21232c",
+        notes: "#0a0c10",
+        "notes-grey": "#636363",
+        dbase: "#FFFFFF",
+      },
       maxWidth: {
         "192": "48rem",
       },
