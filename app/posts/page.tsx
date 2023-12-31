@@ -25,18 +25,18 @@ const Post = async () => {
   const posts = await queryAllPosts()
   return <>
     <div className='mx-10 sm:mx-20 sm:mt-28'>
-      <h3 className="mt-2 text-2xl">Posts</h3>
+      <h3 className="mt-2 text-2xl text-title">Posts</h3>
       <div className="mt-4">View all <Link href="/tags" className="underline text-title cursor-pointer">tags</Link></div>
     </div>
     <ul className='posts mx-10 mt-8 sm:mx-20'>
-      <li>{ posts.map((post: Post) => {
+      { posts.map((post: Post, idx: number) => {
         return (
-          <>
-            <div>{ post.title }</div>
-            <div>{ formatDate(post.createdAt) }</div>
-          </>
+          <li className='mt-4' key={idx}>
+            <div className='text-base underline  cursor-pointer hover:text-title sm:text-xl'>{ post.title }</div>
+            <div className='mt-2'>{ formatDate(post.createdAt) }</div>
+          </li>
         )
-      }) }</li>
+      }) }
     </ul>
   </>;
 };
