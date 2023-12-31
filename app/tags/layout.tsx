@@ -1,3 +1,10 @@
+/*
+ * @Author: chenjianfeng chenjianfeng93@163.com
+ * @Date: 2023-12-31 12:48:58
+ * @Description: 
+ */
+import BasicLayout from '@/app/components/BasicLayout'
+
 const TagsLayout  = ({
     children,
   }: {
@@ -5,10 +12,8 @@ const TagsLayout  = ({
   }) => {
     return (
         <>
-            <div className='mx-10 sm:mx-20 sm:mt-28'>
-                <h3 className="mt-2 text-2xl text-title">Tags</h3>
-            </div>
-            <div className="mx-10 mt-12 sm:mx-20 sm:mt-14">{children}</div>
+            <BasicLayout title={ 'Tags' } content={children} />
+            
         </>
     )
 }

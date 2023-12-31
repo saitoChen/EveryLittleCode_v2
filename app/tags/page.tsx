@@ -26,7 +26,7 @@ const Tags = async () => {
                 { tagsList && tagsList.map((tag: Tag) => {
                     return (
                         <li className="mt-2 hover:text-title" key={tag.tagId}>
-                            <Link href={`/posts/${tag.tagName}`} className='flex'>
+                            <Link href={`/posts/${tag.tagName}?id=${tag.tagId}`} className='flex'>
                                 <div className='mr-4 underline cursor-pointer'>{ tag.tagName }</div>
                                 <div>({ tag.articleNums })</div>
                             </Link>
