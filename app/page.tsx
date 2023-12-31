@@ -1,8 +1,4 @@
-/*
- * @Author: chenjianfeng chenjianfeng9335@gmail.com
- * @Date: 2023-12-16 11:11:23
- * @Description:
- */
+import Link from 'next/link'
 export default function Home() {
   return (
     <>
@@ -17,9 +13,9 @@ export default function Home() {
         <div>🤟Hi there! I'm Jeff</div>
         {/*eslint-disable-next-line react/no-unescaped-entities*/}
         <div className="mt-2">I'm Software Engineer</div>
-        <div className="mt-10 text-title underline cursor-pointer sm:text-xl">
+        <Link href="/post" className="mt-10 text-title underline cursor-pointer sm:text-xl">
           Posts
-        </div>
+        </Link>
       </div>
     </>
   );

@@ -1,0 +1,1 @@
+export const getAllPosts = `SELECT title,createdAt FROM articles_list ORDER BY createdAt DESC`
