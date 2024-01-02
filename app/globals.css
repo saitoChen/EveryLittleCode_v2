@@ -8,16 +8,23 @@ body {
 }
 
 article {
-  line-height: 30px;
+  line-height: 24px;
+  padding-bottom: 50px;
+  overflow: auto;
 }
 
 article h1 {
   font-size: 28px;
+  margin: 30px 0;
 }
 
 article h2 {
   font-size: 23px;
   font-weight: 600;
+}
+
+article p {
+  margin: 20px 0;
 }
 
 article code {
