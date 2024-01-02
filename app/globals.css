@@ -6,3 +6,31 @@ body {
   padding: 0;
   margin: 0;
 }
+
+article {
+  line-height: 30px;
+}
+
+article h1 {
+  font-size: 28px;
+}
+
+article h2 {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+article code {
+  display: inline-block;
+  color: #54790d;
+  font-size: 14px;
+  font-weight: 200;
+  background: rgb(246, 246, 246);
+  line-height: 20px;
+  padding: 4px;
+  border-radius: 4px;
+}
+article a {
+  text-decoration: underline;
+  color: #E60067;
+}
