@@ -1,3 +1,8 @@
+/*
+ * @Author: chenjianfeng chenjianfeng93@163.com
+ * @Date: 2024-01-01 13:59:52
+ * @Description: 
+ */
 import query from '@/app/libs/db'
 import { getPostById } from '@/app/libs/sql'
 import { parseRes } from '@/app/utils/formatRawData'
@@ -39,11 +44,13 @@ const Post = async ({ params, searchParams }: {params: { slug: string }, searchP
         },
       })
     return (
-        <div className='mx-6 mt-24 sm:mt-20'>
-            <div className='title text-xl text-title underline sm:w-1/2'>{ post.title }</div>
-            <div className='date mt-10 sm:mt-4'>{ formatDate(post.createdAt) }</div>
-            <div className='author'>created by { post.author }</div>
-            <article>
+        <div className='mx-6 relative'>
+            <div className="post-header  mt-24 sm:mt-8">
+                <div className='title text-2xl  underline text-title sm:w-full sm:text-3xl'>{ post.title }</div>
+                <div className='date mt-10 text-sm sm:mt-8'>{ formatDate(post.createdAt) }</div>
+                <div className='author text-sm'>created by { post.author }</div>
+            </div>
+            <article className='mt-8 sm:absolute sm:top-40'>
                 { content }
             </article>
         </div>

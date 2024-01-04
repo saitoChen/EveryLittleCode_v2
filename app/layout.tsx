@@ -1,3 +1,8 @@
+/*
+ * @Author: chenjianfeng chenjianfeng93@163.com
+ * @Date: 2023-12-30 10:29:34
+ * @Description: 
+ */
 import type { Metadata } from "next";
 import Header from "./components/Header";
 import "./globals.css";
@@ -11,7 +16,7 @@ const LXGW = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "EveryLittleCode",
+  title: "EveryLittleCode🐤",
   description: "A Blog created by jeff",
 };
 

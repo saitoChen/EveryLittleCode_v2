@@ -14,12 +14,17 @@ article {
 }
 
 article h1 {
-  font-size: 28px;
+  font-size: 23px;
   margin: 30px 0;
 }
 
 article h2 {
-  font-size: 23px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+article h3 {
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -36,8 +41,8 @@ article code {
   line-height: 20px;
   padding: 4px;
   border-radius: 4px;
+  margin: 4px 0;
 }
 article a {
-  text-decoration: underline;
   color: #E60067;
 }

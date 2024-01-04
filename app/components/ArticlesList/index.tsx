@@ -12,7 +12,7 @@ const ArticlesList = ({ posts }: {posts: Post[]}) => {
     const path = heads.get('next-url')
     const title = path && path.split('/')[2] ? decodeURIComponent(path.split('/')[2]) : 'All'
     return (
-        <ul className='posts mt-8'>
+        <ul className='posts mt-8 pb-16 '>
         {posts.map((post: Post) => {
             return (
             <li className='mt-4' key={post.article_id}>

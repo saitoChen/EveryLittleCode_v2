@@ -26,8 +26,8 @@ const queryAllPosts = async () => {
 const Post = async () => {
   const posts = await queryAllPosts()
   return <div className='mx-10 sm:mx-20'>
-    <div className='sm:mt-28'>
-      <h3 className="mt-2 text-2xl text-title">Posts</h3>
+    <div className='sm:mt-24'>
+      <h3 className="mt-2 text-2xl text-title sm:text-3xl">Posts</h3>
       <div className="mt-4">View all <Link href="/tags" className="underline text-title cursor-pointer">tags</Link></div>
     </div>
     <ArticlesList posts={posts} />
