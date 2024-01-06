@@ -13,7 +13,7 @@ const ArticlesList = ({ posts }: {posts: Post[]}) => {
     const title = path && path.split('/')[2] ? decodeURIComponent(path.split('/')[2]) : 'All'
     return (
         <ul className='posts mt-8 pb-16 '>
-        {posts.map((post: Post) => {
+        {Array.isArray(posts) && posts.map((post: Post) => {
             return (
             <li className='mt-4' key={post.article_id}>
                 <Link href={`/posts/${title}/${post.title}?id=${post.article_id}`} className='text-base underline  cursor-pointer hover:text-title sm:text-xl'>{ post.title }</Link>

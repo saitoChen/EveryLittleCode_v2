@@ -3,9 +3,7 @@
  * @Date: 2023-12-31 12:47:34
  * @Description: 
  */
-import query from '@/app/libs/db'
-import { getTagsCount } from '@/app/libs/sql'
-import { parseRes } from '../utils/formatRawData'
+
 import Link from 'next/link'
 type Tag = {
     tagName: string
@@ -14,8 +12,9 @@ type Tag = {
 }
 
 const getAllTags = async () => {
-    const tagsInfo = await query(getTagsCount)
-    return parseRes(tagsInfo)
+    const res = await fetch('http://localhost:3000/api/tags')
+    const tagsInfo = await res.json()
+    return tagsInfo.data
 }
 
 const Tags = async () => {
@@ -23,7 +22,7 @@ const Tags = async () => {
     return (
         <>
             <ul>
-                { tagsList && tagsList.map((tag: Tag) => {
+                { Array.isArray(tagsList) && tagsList.map((tag: Tag) => {
                     return (
                         <li className="mt-2 hover:text-title" key={tag.tagId}>
                             <Link href={`/posts/${tag.tagName}?id=${tag.tagId}`} className='flex'>

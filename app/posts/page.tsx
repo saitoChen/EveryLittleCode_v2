@@ -3,10 +3,6 @@
  * @Date: 2023-12-30 10:29:34
  * @Description: 
  */
-import query from '@/app/libs/db'
-import { getAllPosts } from '../libs/sql';
-import { parseRes } from '../utils/formatRawData';
-import { formatDate } from '../utils/formatDate';
 import Link from 'next/link'
 import ArticlesList from '../components/ArticlesList';
 
@@ -19,8 +15,9 @@ type Post = {
 export const revalidate = 10 * 60 
 
 const queryAllPosts = async () => {
-  const allPosts = await query(getAllPosts);
-  return parseRes(allPosts);
+  const allPosts = await fetch('http://localhost:3000/api/posts', {});
+  const result = await allPosts.json()
+  return result.data
 }
 
 const Post = async () => {
