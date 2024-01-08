@@ -18,7 +18,10 @@ const LXGW = localFont({
 export const metadata: Metadata = {
   title: "EveryLittleCode🐤",
   description: "A Blog created by jeff",
-};
+  icons: {
+    icon: '../app/Icons/logo.ico',
+  },
+}
 
 export default function RootLayout({
   children,
