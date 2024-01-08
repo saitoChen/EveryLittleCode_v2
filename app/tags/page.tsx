@@ -12,7 +12,7 @@ type Tag = {
 }
 
 const getAllTags = async () => {
-    const res = await fetch('http://localhost:3000/api/tags')
+    const res = await fetch('http://localhost:3000/api/tags', { next: { revalidate: 60 * 60} })
     const tagsInfo = await res.json()
     return tagsInfo.data
 }

@@ -21,7 +21,7 @@ type PostDetail = Post & {
 }
 
 const getPost = async (id: string):Promise<PostDetail> => {
-    const res = await fetch(`http://localhost:3000/api/posts?postId=${id}`)
+    const res = await fetch(`http://localhost:3000/api/posts?postId=${id}`, { next: { revalidate: 60 * 60} })
     const post = await res.json()
     return post.data[0]
 }

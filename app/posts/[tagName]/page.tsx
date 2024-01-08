@@ -10,7 +10,7 @@ import BasicLayout from '@/app/components/BasicLayout';
 
 
 const getArtciles = async (id: string):Promise<Post[]> => {
-  const res = await fetch(`http://localhost:3000/api/posts?tagId=${id}`)
+  const res = await fetch(`http://localhost:3000/api/posts?tagId=${id}`, { next: { revalidate: 60 * 60} })
   const tags = await res.json()
   return tags.data
 }
