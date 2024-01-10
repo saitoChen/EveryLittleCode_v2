@@ -11,7 +11,7 @@ const nextConfig = {
         'MYSQL_DATABASE': 'everylittlecode',
         'MYSQL_USER': 'root',
         'MYSQL_PASSWORD': '123456',
-        'BASE': 'http://106.75.184.221:3000'
+        'BASE': 'http://localhost:3000'
     },
 }
 
