@@ -21,9 +21,13 @@ type PostDetail = Post & {
 }
 
 const getPost = async (id: string):Promise<PostDetail> => {
-    const res = await fetch(`${process.env.BASE}/api/posts?postId=${id}`, { next: { revalidate: 60 * 60} })
-    const post = await res.json()
-    return post.data[0]
+    // const res = await fetch(`${process.env.BASE}/api/posts?postId=${id}`, { next: { revalidate: 60 * 60} })
+    // const post = await res.json()
+    // return post.data[0]
+    const res = await query(getPostById(id))
+    console.log(parseRes(res)[0])
+    const post = parseRes(res)[0][0]
+    return post
 }
 
 const Post = async ({ params, searchParams }: {params: { slug: string }, searchParams: { id: string }}) => {

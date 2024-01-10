@@ -5,16 +5,25 @@
  */
 
 import Link from 'next/link'
+import query from '@/app/libs/db'
+import { getTagsCount } from '@/app/libs/sql'
+import { parseRes } from '../utils/formatRawData'
+
 type Tag = {
     tagName: string
     tagId: number
     articleNums: number
 }
 
+
+
 const getAllTags = async () => {
-    const res = await fetch(`${process.env.BASE}/api/tags`, { next: { revalidate: 60 * 60} })
-    const tagsInfo = await res.json()
-    return tagsInfo.data
+    // const res = await fetch(`${process.env.BASE}/api/tags`, { next: { revalidate: 60 * 60} })
+    // const tagsInfo = await res.json()
+    // return tagsInfo.data
+    const result = await query(getTagsCount)
+    const tagList = parseRes(result)[0]
+    return tagList
 }
 
 const Tags = async () => {

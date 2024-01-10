@@ -5,7 +5,10 @@
  */
 import Link from 'next/link'
 import ArticlesList from '../components/ArticlesList';
-
+import query from '@/app/libs/db'
+import { getAllPosts } from '../libs/sql';
+import { parseRes } from '../utils/formatRawData';
+import { formatDate } from '../utils/formatDate';
 type Post = {
   title: string
   createdAt: string
@@ -15,9 +18,12 @@ type Post = {
 export const revalidate = 10 * 60 
 
 const queryAllPosts = async () => {
-  const allPosts = await fetch(`${process.env.BASE}/api/posts`, { next: { revalidate: 60 * 60} });
-  const result = await allPosts.json()
-  return result.data
+  // const allPosts = await fetch(`${process.env.BASE}/api/posts`, { next: { revalidate: 60 * 60} });
+  // const result = await allPosts.json()
+  // return result.data
+  const result = await query(getAllPosts);
+  const posts = parseRes(result)[0]
+  return posts
 }
 
 const Post = async () => {
