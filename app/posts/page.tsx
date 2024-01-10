@@ -15,7 +15,7 @@ type Post = {
 export const revalidate = 10 * 60 
 
 const queryAllPosts = async () => {
-  const allPosts = await fetch('http://localhost:3000/api/posts', { next: { revalidate: 60 * 60} });
+  const allPosts = await fetch(`${process.env.BASE}/api/posts`, { next: { revalidate: 60 * 60} });
   const result = await allPosts.json()
   return result.data
 }
