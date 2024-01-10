@@ -1,3 +1,8 @@
+/*
+ * @Author: chenjianfeng chenjianfeng93@163.com
+ * @Date: 2023-12-30 10:29:34
+ * @Description: 
+ */
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
@@ -5,7 +10,7 @@ const nextConfig = {
         'MYSQL_PORT': '3306',
         'MYSQL_DATABASE': 'everylittlecode',
         'MYSQL_USER': 'root',
-        'MYSQL_PASSWORD': '13612139321',
+        'MYSQL_PASSWORD': '123456',
     },
 }
 
