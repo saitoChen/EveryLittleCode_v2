@@ -13,6 +13,16 @@ const nextConfig = {
         'MYSQL_PASSWORD': '123456',
         'BASE': 'http://localhost:3000'
     },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'avatars.githubusercontent.com',
+                port: '',
+                pathname: '/u/**',
+            },
+        ],
+    },
 }
 
 module.exports = nextConfig
